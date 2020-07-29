@@ -65,7 +65,7 @@ def evaluate(env, agent, render=False):
 
 def calc_reward_to_go(reward_list, gamma=1.0):
     for i in range(len(reward_list) - 2, -1, -1):
-        # G_t = r_t + γ·r_t+1 + ... = r_t + γ·G_t+1
+        # G_i = r_i + γ·G_i+1
         reward_list[i] += gamma * reward_list[i + 1]  # Gt
     return np.array(reward_list)
 
